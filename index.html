@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+ <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayu Nadia — Portfolio</title>
 <script src="https://elfsightcdn.com/platform.js" async></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#fff;--ink:#111;--muted:#888;--line:#e5e5e5;--ph1:#f4f4f4;--maxw:1280px;--gap:clamp(10px,1.6vw,18px)}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,3vw,36px)}
-  .head{padding:24px 0 0;border-bottom:1px solid var(--line)}
-  .meta-combined{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:14px}
-  .name{font-size:clamp(24px,5vw,40px);letter-spacing:.18em;text-transform:uppercase;font-weight:500;line-height:1;margin-bottom:0}
-  .bio-wrap{padding:24px 0 28px;border-bottom:1px solid var(--line)}
-  .bio-headline{font-size:20px;font-weight:500;letter-spacing:-.01em;margin-bottom:14px;font-family:'DM Sans',sans-serif}
-  .bio-body{font-size:13px;line-height:1.95;color:#666;font-style:italic;font-family:'DM Sans',sans-serif;font-weight:300;text-align:justify;width:100%}
-  .bio-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
-  .tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:0.5px solid #ccc;padding:4px 11px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif}
-  .stats{display:flex;flex-wrap:wrap;gap:4px 28px;padding:14px 0;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-  .stats span{color:var(--muted)}
-  .stats b{color:var(--ink);font-weight:500;margin-left:5px}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,3vw,56px)}
+  .head{padding:48px 0 0;border-bottom:1px solid var(--line)}
+  .head-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px}
+  .head-status{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:#bbb;line-height:2;font-family:'Inter',sans-serif}
+  .head-location{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#bbb;font-family:'Inter',sans-serif}
+  .name{font-family:'Cormorant Garamond',serif;font-size:clamp(64px,10vw,120px);font-weight:300;letter-spacing:-.02em;line-height:.9;text-transform:uppercase;margin-bottom:32px}
+  .head-rule{height:1px;background:#111;margin-bottom:20px}
+  .bio-row{display:grid;grid-template-columns:200px 1fr;gap:40px;padding-bottom:32px}
+  .bio-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#bbb;padding-top:4px;font-family:'Inter',sans-serif}
+  .bio-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .bio-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;border:0.5px solid #ccc;padding:4px 10px;color:#999;font-family:'Inter',sans-serif}
+  .bio-text{font-family:'Inter',sans-serif;font-size:13px;font-weight:300;line-height:2;color:#555;text-align:justify}
+  .stats{display:flex;flex-wrap:wrap;gap:4px 28px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;font-family:'Inter',sans-serif}
+  .stats b{color:var(--ink);font-weight:500;margin-left:4px}
   .tabs{display:flex;gap:28px;padding:15px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:30;flex-wrap:wrap}
-  .tab{background:none;border:none;cursor:pointer;font:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:4px 0;position:relative;transition:color .15s}
+  .tab{background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:4px 0;position:relative;transition:color .15s}
   .tab[aria-selected="true"]{color:var(--ink)}
   .tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-16px;height:1px;background:var(--ink)}
   .tab:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
@@ -34,33 +36,38 @@
   .dig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--gap);align-items:start}
   .tile img{width:100%;height:auto;display:block}
   .tile{overflow:hidden;background:var(--ph1)}
-  figcaption{padding:7px 0 4px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-  figcaption .desc{font-size:10px;letter-spacing:.1em;text-transform:none;color:var(--muted);margin-top:2px;font-style:italic}
-  footer{border-top:1px solid var(--line);padding:28px 0 52px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 32px;align-items:center}
+  figcaption{padding:7px 0 4px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif}
+  figcaption .desc{font-size:10px;letter-spacing:.1em;text-transform:none;color:var(--muted);margin-top:2px;font-family:'Inter',sans-serif}
+  footer{border-top:1px solid var(--line);padding:28px 0 52px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 32px;align-items:center;font-family:'Inter',sans-serif}
   footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
   footer a:hover{border-color:transparent}
-  @media(max-width:540px){.col-grid{columns:2 140px}.dig-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.tabs{gap:18px}}
+  @media(max-width:640px){.col-grid{columns:2 140px}.dig-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.tabs{gap:18px}.bio-row{grid-template-columns:1fr}.name{font-size:clamp(48px,14vw,80px)}}
 </style>
 </head>
 
 <body>
 <div class="wrap">
-
 <header class="head">
-  <div class="meta-combined">Independent · Not Currently Represented &nbsp;·&nbsp; Commercial · Editorial · Swimwear</div>
-  <h1 class="name">Ayu Nadia</h1>
-  <div class="bio-wrap">
-    <div class="bio-headline">Model. Dancer. Content Creator.</div>
-    <div class="bio-body">Bali-based creative commercially trained in London for three years, with foundations under leading names in Heels choreography including Kayla Brenda, Nicole Kirkland, Yanis Marshall, Jojo Gomez, and Brina Brecelj. Dance styles: commercial, heels, and dancehall. UGC partnerships across Bali and London spanning F&B, entertainment, haircare, activewear, and wellness. Storytelling-first approach rooted in a wellness niche.</div>
-    <div class="bio-tags">
-      <span class="tag">Modelling</span>
-      <span class="tag">Heels</span>
-      <span class="tag">Commercial Dance</span>
-      <span class="tag">Dancehall</span>
-      <span class="tag">UGC</span>
-      <span class="tag">Wellness</span>
-      <span class="tag">Content Creation</span>
+  <div class="head-top">
+    <div class="head-status">Independent · Not Currently Represented<br>Commercial · Editorial · Swimwear</div>
+    <div class="head-location">Bali, Indonesia</div>
+  </div>
+  <h1 class="name">Ayu<br>Nadia</h1>
+  <div class="head-rule"></div>
+  <div class="bio-row">
+    <div>
+      <div class="bio-label">About</div>
+      <div class="bio-tags">
+        <span class="bio-tag">Modelling</span>
+        <span class="bio-tag">Heels</span>
+        <span class="bio-tag">Commercial Dance</span>
+        <span class="bio-tag">Dancehall</span>
+        <span class="bio-tag">UGC</span>
+        <span class="bio-tag">Wellness</span>
+        <span class="bio-tag">Content Creation</span>
+      </div>
     </div>
+    <div class="bio-text">Bali-based creative commercially trained in London for three years, with foundations under leading names in Heels choreography including Kayla Brenda, Nicole Kirkland, Yanis Marshall, Jojo Gomez, and Brina Brecelj. Dance styles: commercial, heels, and dancehall. UGC partnerships across Bali and London spanning F&B, entertainment, haircare, activewear, and wellness. Storytelling-first approach rooted in a wellness niche.</div>
   </div>
 </header>
 
