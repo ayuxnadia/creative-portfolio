@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayu Nadia — Portfolio</title>
 <script src="https://elfsightcdn.com/platform.js" async></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#fff;--ink:#111;--muted:#888;--line:#e5e5e5;--ph1:#f4f4f4;--maxw:1280px;--gap:clamp(10px,1.6vw,18px)}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,3vw,36px)}
-  .head{padding:24px 0 18px;border-bottom:1px solid var(--line)}
-  .head-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;gap:12px;flex-wrap:wrap}
-  .label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-  .name{font-size:clamp(24px,5vw,40px);letter-spacing:.18em;text-transform:uppercase;font-weight:500;line-height:1}
+  .head{padding:24px 0 0;border-bottom:1px solid var(--line)}
+  .meta-combined{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:14px}
+  .name{font-size:clamp(24px,5vw,40px);letter-spacing:.18em;text-transform:uppercase;font-weight:500;line-height:1;margin-bottom:0}
+  .bio-wrap{padding:24px 0 28px;border-bottom:1px solid var(--line)}
+  .bio-headline{font-size:20px;font-weight:500;letter-spacing:-.01em;margin-bottom:14px;font-family:'DM Sans',sans-serif}
+  .bio-body{font-size:13px;line-height:1.95;color:#666;font-style:italic;font-family:'DM Sans',sans-serif;font-weight:300;text-align:justify;width:100%}
+  .bio-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+  .tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:0.5px solid #ccc;padding:4px 11px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif}
   .stats{display:flex;flex-wrap:wrap;gap:4px 28px;padding:14px 0;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
   .stats span{color:var(--muted)}
   .stats b{color:var(--ink);font-weight:500;margin-left:5px}
@@ -31,28 +36,13 @@
   .tile{overflow:hidden;background:var(--ph1)}
   figcaption{padding:7px 0 4px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   figcaption .desc{font-size:10px;letter-spacing:.1em;text-transform:none;color:var(--muted);margin-top:2px;font-style:italic}
-  .ig-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-  .ig-head a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
-  .ig-head a:hover{border-color:var(--ink)}
   footer{border-top:1px solid var(--line);padding:28px 0 52px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 32px;align-items:center}
   footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
   footer a:hover{border-color:transparent}
   @media(max-width:540px){.col-grid{columns:2 140px}.dig-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.tabs{gap:18px}}
 </style>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-
-
-  <div style="display:flex;flex-wrap:wrap;gap:8px">
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">Modelling</span>
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">Heels</span>
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">Commercial Dance</span>
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">Dancehall</span>
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">UGC</span>
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">Wellness</span>
-    <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:0.5px solid #ccc;padding:5px 12px;color:#888;border-radius:20px;font-family:'DM Sans',sans-serif">Content Creation</span>
-  </div>
-</div>
 </head>
+
 <body>
 <div class="wrap">
 
